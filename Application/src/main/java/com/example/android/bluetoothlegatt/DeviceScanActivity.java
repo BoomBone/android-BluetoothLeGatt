@@ -26,6 +26,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -42,6 +43,7 @@ import java.util.ArrayList;
  * Activity for scanning and displaying available Bluetooth LE devices.
  */
 public class DeviceScanActivity extends ListActivity {
+    private static final String TAG = "DeviceScanActivity";
     private LeDeviceListAdapter mLeDeviceListAdapter;
     private BluetoothAdapter mBluetoothAdapter;
     private boolean mScanning;
@@ -143,10 +145,15 @@ public class DeviceScanActivity extends ListActivity {
         scanLeDevice(false);
         mLeDeviceListAdapter.clear();
     }
-
+    //click the list view start DeviceControlActivity
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         final BluetoothDevice device = mLeDeviceListAdapter.getDevice(position);
+        gotoDeviceControll(device);
+
+    }
+
+    private void gotoDeviceControll(BluetoothDevice device) {
         if (device == null) return;
         final Intent intent = new Intent(this, DeviceControlActivity.class);
         intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, device.getName());
@@ -192,7 +199,9 @@ public class DeviceScanActivity extends ListActivity {
 
         public void addDevice(BluetoothDevice device) {
             if(!mLeDevices.contains(device)) {
+
                 mLeDevices.add(device);
+                //if have the name yunmai connect
             }
         }
 
@@ -245,6 +254,7 @@ public class DeviceScanActivity extends ListActivity {
         }
     }
 
+    public static String YUNMAI_DEVICE = "YUNMAI-SIGNAL-CW";
     // Device scan callback.
     private BluetoothAdapter.LeScanCallback mLeScanCallback =
             new BluetoothAdapter.LeScanCallback() {
@@ -254,6 +264,14 @@ public class DeviceScanActivity extends ListActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+                    //添加设备
+                   if(device!=null){
+                       Log.e(TAG,"device.getName()="+device.getName()+",device.getAddress()"+device.getAddress());
+                       if(device.getName()!=null&&device.getName().equals(YUNMAI_DEVICE)){
+                           gotoDeviceControll(device);
+                       }
+                   }
+
                     mLeDeviceListAdapter.addDevice(device);
                     mLeDeviceListAdapter.notifyDataSetChanged();
                 }
