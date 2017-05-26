@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "G:\\Android_workspace\\android-BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
+        "source": "G:\\andsdk\\.android\\build-cache\\bb8959ee7fcaeca1fdc7a9c846ce53229800d986\\output\\res\\color-v23\\abc_tint_edittext.xml"
+    },
+    {
+        "merged": "G:\\Android_workspace\\android-BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
+        "source": "G:\\andsdk\\.android\\build-cache\\bb8959ee7fcaeca1fdc7a9c846ce53229800d986\\output\\res\\color-v23\\abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "G:\\Android_workspace\\android-BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
+        "source": "G:\\andsdk\\.android\\build-cache\\bb8959ee7fcaeca1fdc7a9c846ce53229800d986\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
+    },
+    {
+        "merged": "G:\\Android_workspace\\android-BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
+        "source": "G:\\andsdk\\.android\\build-cache\\bb8959ee7fcaeca1fdc7a9c846ce53229800d986\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "G:\\Android_workspace\\android-BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
+        "source": "G:\\andsdk\\.android\\build-cache\\bb8959ee7fcaeca1fdc7a9c846ce53229800d986\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "G:\\Android_workspace\\android-BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "G:\\andsdk\\.android\\build-cache\\bb8959ee7fcaeca1fdc7a9c846ce53229800d986\\output\\res\\color-v23\\abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "G:\\Android_workspace\\android-BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
+        "source": "G:\\andsdk\\.android\\build-cache\\bb8959ee7fcaeca1fdc7a9c846ce53229800d986\\output\\res\\color-v23\\abc_tint_default.xml"
+    },
+    {
+        "merged": "G:\\Android_workspace\\android-BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
+        "source": "G:\\andsdk\\.android\\build-cache\\bb8959ee7fcaeca1fdc7a9c846ce53229800d986\\output\\res\\color-v23\\abc_tint_spinner.xml"
+    },
+    {
+        "merged": "G:\\Android_workspace\\android-BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
+        "source": "G:\\andsdk\\.android\\build-cache\\bb8959ee7fcaeca1fdc7a9c846ce53229800d986\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
+    }
+]
