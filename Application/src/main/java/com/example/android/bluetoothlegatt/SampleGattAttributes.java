@@ -17,6 +17,7 @@
 package com.example.android.bluetoothlegatt;
 
 import java.util.HashMap;
+import java.util.UUID;
 
 /**
  * This class includes a small subset of standard GATT attributes for demonstration purposes.
@@ -39,4 +40,12 @@ public class SampleGattAttributes {
         String name = attributes.get(uuid);
         return name == null ? defaultName : name;
     }
+
+    public static final UUID UUID_YUNMAI_WEIGHT_MEASUREMENT_20 = UUID.fromString("0000ffe4-0000-1000-8000-00805f9b34fb");
+
+    public static String DEVICE_NAME_YUNMAI_WEIGHT_PREFIX1 = "0D 15 0B 01 55";//0D 15 0B 01 55 79 58 46 19 27 13--8,9
+    public static String DEVICE_NAME_YUNMAI_WEIGHT_PREFIX2 = "0D 15 12 02 00 55";//0D 15 12 02 00 55 79 58 46 06 01 FA 65 19 27 00 00 91--13,14
+
+
+
 }
