@@ -1,4 +1,4 @@
-#Fri May 26 17:41:21 GMT+08:00 2017
+#Sat May 27 09:56:40 GMT+08:00 2017
 base.0=G\:\\Android_workspace\\android-BluetoothLeGatt\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
 file.0=G\:\\Android_workspace\\android-BluetoothLeGatt\\Application\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

@@ -154,31 +154,31 @@ public class BluetoothLeService extends Service {
 //            }
 //        }
         /*---------------------------------------获取数据--------------------------------------*/
-        else if (SampleGattAttributes.UUID_YUNMAI_WEIGHT_MEASUREMENT_20.equals(characteristic.getUuid())) {
-            // For all other profiles, writes the data formatted in HEX.
-            final byte[] data = characteristic.getValue();
-            if (data != null && data.length > 0) {
-                final StringBuilder stringBuilder = new StringBuilder(data.length);
-                for(byte byteChar : data)
-                    stringBuilder.append(String.format("%02X ", byteChar));
-                intent.putExtra(EXTRA_DATA, new String(data) + "\n" + stringBuilder.toString());
-                String tt[] = stringBuilder.toString().split(" ");
-                String num = tt[4].toString()+tt[5].toString();
-                if(num.startsWith("0")){
-                    num = num.substring(1,num.length());
-                }
-                double weight = Double.valueOf(Integer.parseInt(num,16))/10;
-                intent.putExtra(DEVICE_DATA, String.valueOf(weight) + " ㎏");
-                Log.e("cst", "你现在体重是=" + weight + " ㎏");
-            }
-
+//        else if (SampleGattAttributes.UUID_YUNMAI_WEIGHT_MEASUREMENT_20.equals(characteristic.getUuid())) {
+//            // For all other profiles, writes the data formatted in HEX.
+//            final byte[] data = characteristic.getValue();
+//            if (data != null && data.length > 0) {
+//                final StringBuilder stringBuilder = new StringBuilder(data.length);
+//                for(byte byteChar : data)
+//                    stringBuilder.append(String.format("%02X ", byteChar));
+//                intent.putExtra(EXTRA_DATA, new String(data) + "\n" + stringBuilder.toString());
+//                String tt[] = stringBuilder.toString().split(" ");
+//                String num = tt[4].toString()+tt[5].toString();
+//                if(num.startsWith("0")){
+//                    num = num.substring(1,num.length());
+//                }
+//                double weight = Double.valueOf(Integer.parseInt(num,16))/10;
+//                intent.putExtra(DEVICE_DATA, String.valueOf(weight) + " ㎏");
+//                Log.e("cst", "你现在体重是=" + weight + " ㎏");
+//            }
+//        }
 //            BluetoothGattDescriptor descriptor = characteristic.getDescriptor(SampleGattAttributes.UUID_CCC);
 //            Log.e("cst","broadcastUpdate,BluetoothGattDescriptor="+descriptor);
 //            if (descriptor != null) {
 //                Log.e("cst","broadcastUpdate,BluetoothGattDescriptor.setValue="+BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
 //                descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
 //            }
-        } else {//if (SampleGattAttributes.UUID_YUNMAI_WEIGHT_MEASUREMENT_30.equals(characteristic.getUuid())) {
+         else {//if (SampleGattAttributes.UUID_YUNMAI_WEIGHT_MEASUREMENT_30.equals(characteristic.getUuid())) {
 //            Log.e("cst","my.getUuid()="+SampleGattAttributes.UUID_YUNMAI_WEIGHT_MEASUREMENT_30);
             final byte[] data = characteristic.getValue();
 //            Log.e("cst", "YUNMAI_WEIGHT,data=" + data);
@@ -186,23 +186,23 @@ public class BluetoothLeService extends Service {
                 final StringBuilder stringBuilder = new StringBuilder(data.length);
                 for(byte byteChar : data)
                     stringBuilder.append(String.format("%02X ", byteChar));
-                intent.putExtra(EXTRA_DATA, new String(data) + "\n" + stringBuilder.toString());
+                intent.putExtra(EXTRA_DATA, stringBuilder.toString());
 //                Log.e("cst", "YUNMAI_WEIGHT,stringBuilder.toString()=" + stringBuilder.toString());
-                if(stringBuilder.toString().startsWith(SampleGattAttributes.DEVICE_NAME_YUNMAI_WEIGHT_PREFIX1)){
+                String tt[] = stringBuilder.toString().split(" ");
+                if(tt!=null&&data.length>0){
 //                    num = num.substring(1,num.length());
-                    String tt[] = stringBuilder.toString().split(" ");
-                    String num = tt[8].toString()+tt[9].toString();
-                    double weight = Double.valueOf(Integer.parseInt(num,16))*2/100;
-                    intent.putExtra(DEVICE_DATA, String.valueOf(weight) + " 斤");
+                    if(tt.length<13){
+                        String num = tt[8].toString()+tt[9].toString();
+                        double weight = Double.valueOf(Integer.parseInt(num,16))*2/100;
+                        intent.putExtra(DEVICE_DATA, String.valueOf(weight) + " 斤");
 //                    Log.e("cst", "你现在yunmai体重是=" + weight + " 斤");
-                }
-                if(stringBuilder.toString().startsWith(SampleGattAttributes.DEVICE_NAME_YUNMAI_WEIGHT_PREFIX2)){
-//                    num = num.substring(1,num.length());
-                    String tt[] = stringBuilder.toString().split(" ");
-                    String num = tt[13].toString()+tt[14].toString();
-                    double weight = Double.valueOf(Integer.parseInt(num,16))*2/100;
-                    intent.putExtra(DEVICE_DATA, String.valueOf(weight) + " 斤");
-                    Log.e("cst", "你现在yunmai体重是=" + weight + " 斤" + stringBuilder.toString());
+                    }else{
+                        String num = tt[13].toString()+tt[14].toString();
+                        double weight = Double.valueOf(Integer.parseInt(num,16))*2/100;
+                        intent.putExtra(DEVICE_DATA, String.valueOf(weight) + " 斤");
+                        Log.e("cst", "你现在yunmai体重是=" + weight + " 斤" + stringBuilder.toString());
+                    }
+
                 }
 
             }
